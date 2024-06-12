@@ -1,6 +1,7 @@
 const { defineConfig } = require('cypress');
 
 module.exports = defineConfig({
+  projectId: 'yb5e2a',
   e2e: {
     baseUrl: 'https://portal.dev.digitalu.teambespin.us/app/support',
 
