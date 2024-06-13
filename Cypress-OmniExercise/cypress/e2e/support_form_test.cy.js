@@ -6,11 +6,12 @@ describe('Support Form Tests', () => {
 
     it('Attempt to submit the form without filling the "Question" field', () => {
         // Enter test data into all fields except the "Question" field
+        cy.wait(500);
         cy.get('[data-testid="name"]').should('be.visible').type('Test User');
-        cy.get('#email').should('be.visible').type('testuser@example.com');
-        cy.get('#phoneNumber').should('be.visible').type('1234567890');
-        cy.get('#dutyStation').should('be.visible').type('New York');
-        cy.get('#subject').click();
+        cy.get('[data-testid="email"]').should('be.visible').type('testuser@example.com');
+        cy.get('[data-testid=phoneNumber]').should('be.visible').type('1234567890');
+        cy.get('[data-testid=dutyStation]').should('be.visible').type('New York');
+        cy.get('#subject').should('be.visible').click();
         cy.get('#subject').contains('Other').click();
         
         // Attempt to submit the form
@@ -24,10 +25,10 @@ describe('Support Form Tests', () => {
         // Enter test data into all fields
         cy.wait(500);
         cy.get('[data-testid="name"]').should('be.visible').type('Test User');
-        cy.get('#email').should('be.visible').type('testuser@example.com');
-        cy.get('#phoneNumber').should('be.visible').type('1234567890');
-        cy.get('#dutyStation').should('be.visible').type('New York');
-        cy.get('#subject').click();
+        cy.get('[data-testid="email"]').should('be.visible').type('testuser@example.com');
+        cy.get('[data-testid=phoneNumber]').should('be.visible').type('1234567890');
+        cy.get('[data-testid=dutyStation]').should('be.visible').type('New York');
+        cy.get('#subject').should('be.visible').click();
         cy.get('#subject').contains('Other').click();
         cy.get('[data-testid="message"]').should('be.visible').type('This is a test question.');
 
